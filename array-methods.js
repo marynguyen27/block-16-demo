@@ -30,5 +30,46 @@ const mappedNumbers = numbers.map((x) => {
 console.log(mappedNumbers);
 
 /* ------------------ 
-Array.find 
+Find / FindIndex 
 --------------------- */
+const foundNumber = numbers.find((item, index) => {
+  return item === 3;
+});
+// will return undefined if not found
+console.log('Found!', foundNumber);
+
+const foundIndex = numbers.findIndex((item) => item === 3);
+// will return -1 if not found
+// if there are multiple, it will just return the 1st time it found it
+console.log('Found Index', foundIndex);
+
+let objArr = [
+  { name: 'Travis', grade: 'B+' },
+  { name: 'Brian', grade: 'A+' },
+  { name: 'Eric', grade: 'D' },
+];
+
+let found = objArr.find((item) => item.name === 'Travis');
+console.log(found.grade);
+
+/* ------------------ 
+Filter
+--------------------- */
+// return numbers that are even
+let filteredArray = numbers.filter((num) => num % 2 === 0);
+console.log(filteredArray);
+
+/* ------------------ 
+Reduce
+--------------------- */
+
+/*
+accumulator - running total or the answer we are building
+current - current item as we loop the array
+*/
+
+let answer = numbers.reduce((accumulator, currentItem) => {
+  return accumulator + currentItem; // adding to my running total
+});
+
+console.log(answer);
