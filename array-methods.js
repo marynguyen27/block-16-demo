@@ -73,3 +73,16 @@ let answer = numbers.reduce((accumulator, currentItem) => {
 });
 
 console.log(answer);
+
+let myLetters = 'hello'.split('');
+
+let myLetterObject = myLetters.reduce((acc, cur) => {
+  if (!Object.hasOwn(acc, cur)) {
+    acc[cur] = 1;
+  } else {
+    acc[cur] += 1;
+  }
+  return acc;
+}, {});
+
+console.log(myLetterObject);
